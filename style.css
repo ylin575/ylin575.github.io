@@ -1,0 +1,346 @@
+/* ==========================================================================
+   TOKENS — change values here to re-theme the whole site
+   ========================================================================== */
+:root {
+  --bg: #fafaf8;
+  --text: #1a1a1a;
+  --text-muted: #5b5b58;
+  --accent: #2a4b7c;       /* deep academic blue — links, active states */
+  --accent-soft: #4a7c7c;  /* muted teal — used sparingly for tags */
+  --rule: #d8d5cc;         /* hairline dividers */
+  --tag-bg: #f0efe9;
+
+  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  --content-width: 680px;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover,
+a:focus-visible {
+  border-bottom-color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   LAYOUT — everything lives in one centered "article" column
+   ========================================================================== */
+header.masthead,
+main,
+footer.references {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rule {
+  max-width: var(--content-width);
+  margin: 40px auto;
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+/* ==========================================================================
+   MASTHEAD
+   ========================================================================== */
+header.masthead {
+  padding-top: 72px;
+  padding-bottom: 8px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section {
+  padding: 0 0 8px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+
+.section h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section p {
+  margin: 0 0 16px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   RESEARCH FOCUS TAGS
+   ========================================================================== */
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--tag-bg);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   CURRENT WORK
+   ========================================================================== */
+.work-item {
+  margin-bottom: 32px;
+}
+
+.work-item:last-child {
+  margin-bottom: 0;
+}
+
+.work-item-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.status-tag {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 3px 8px;
+}
+
+.status-tag-active {
+  color: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+
+.work-meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+/* ==========================================================================
+   BACKGROUND TIMELINE
+   ========================================================================== */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.timeline li:first-child {
+  border-top: none;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   TOOLS
+   ========================================================================== */
+.tool-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.tool-group-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.tool-group p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.contact-list li:first-child {
+  border-top: none;
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.placeholder-flag {
+  font-size: 13px;
+  color: var(--accent-soft);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   REFERENCES / FOOTER
+   ========================================================================== */
+footer.references {
+  padding-bottom: 80px;
+}
+
+footer.references ol {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 20px;
+  margin: 0;
+}
+
+footer.references li {
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   RESPONSIVE — mobile
+   ========================================================================== */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  header.masthead {
+    padding-top: 48px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .tool-groups {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .work-item-head {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+}
