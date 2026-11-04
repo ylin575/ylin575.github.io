@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects · Yong Lin, PhD</title>
+  <meta name="description" content="Research and software projects by Yong Lin, PhD.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ MASTHEAD (same on every page; only the "active" link changes) ============ -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="index.html">Yong Lin, PhD</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ============ SIDEBAR (identical on every page) ============ -->
+    <aside class="author">
+      <!-- To add a photo: put it in the images/ folder, delete the placeholder div,
+           and uncomment the <img> line below. -->
+      <!-- <img class="avatar" src="images/profile.jpg" alt="Yong Lin"> -->
+      <div class="avatar-placeholder" aria-hidden="true">YL</div>
+
+      <div>
+        <h2 class="author-name">Yong Lin</h2>
+        <p class="author-bio">Postdoctoral Fellow, Meyer Lab, Cold Spring Harbor Laboratory</p>
+      </div>
+
+      <ul class="author-links">
+        <li><span class="label">Location</span><span class="value">Cold Spring Harbor, NY</span></li>
+        <!-- CHECK: confirm which email you want public -->
+        <li><span class="label">Email</span><a class="value" href="mailto:ylin@cshl.edu">ylin@cshl.edu</a></li>
+        <li><span class="label">ORCID</span><a class="value" href="https://orcid.org/0000-0002-2839-5740" target="_blank" rel="noopener">0000-0002-2839-5740</a></li>
+        <li><span class="label">LinkedIn</span><a class="value" href="https://www.linkedin.com/in/ylin575" target="_blank" rel="noopener">ylin575</a></li>
+        <li><span class="label">GitHub</span><a class="value" href="https://github.com/ylin575" target="_blank" rel="noopener">ylin575</a></li>
+      </ul>
+    </aside>
+
+    <!-- ============ PAGE CONTENT (the only part that differs per page) ============ -->
+    <main class="content">
+
+      <h1 class="page-title">Projects</h1>
+
+      <article class="entry">
+        <h3 class="entry-title">Human thymic epithelial cell characterization <span class="badge">Ongoing</span></h3>
+        <p class="entry-meta">Meyer Lab, Cold Spring Harbor Laboratory</p>
+        <p>
+          Developing methods to isolate live epithelial cells from primary human
+          thymus tissue and profile them by flow cytometry and single-cell RNA sequencing,
+          as part of a broader human thymus biobanking effort.
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3 class="entry-title">seq-to-flow <span class="badge">In development</span></h3>
+        <p class="entry-meta">Computational workflow · R</p>
+        <p>
+          A workflow that turns single-cell RNA-seq data into flow cytometry panel
+          recommendations: which surface markers best separate the populations of
+          interest, so that clusters found by sequencing can be sorted or tracked
+          by cytometry.
+        </p>
+        <!-- Add a link here once the repository is public:
+        <p><a href="https://github.com/ylin575/REPO-NAME">Code on GitHub</a></p> -->
+      </article>
+    </main>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="inner">© 2026 Yong Lin · Built with plain HTML &amp; CSS, hosted on GitHub Pages</div>
+  </footer>
+
+</body>
+</html>
