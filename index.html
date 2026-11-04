@@ -4,162 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yong Lin, PhD</title>
-  <meta name="description" content="Yong Lin, PhD — Postdoctoral Fellow, Meyer Lab, Cold Spring Harbor Laboratory. Research on thymic epithelial cells, central tolerance, and T cell development.">
-
-  <!-- Google Fonts: a serif for headings (journal feel), sans for body copy, mono for labels/data -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Yong Lin, PhD — immunologist studying thymic epithelial cells, central tolerance, and T cell development at Cold Spring Harbor Laboratory.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
+  <!-- ============ MASTHEAD (same on every page; only the "active" link changes) ============ -->
   <header class="masthead">
-    <p class="eyebrow">Postdoctoral Fellow · Meyer Lab · Cold Spring Harbor Laboratory</p>
-    <h1>Yong Lin, PhD - Immunology</h1>
-    <p class="subtitle">Autoimmunity, Immune Tolerance, T Cell Biology</p>
+    <div class="masthead-inner">
+      <a class="site-title" href="index.html">Yong Lin, PhD</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+        <li><a href="index.html" class="active" aria-current="page">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <div class="layout">
 
-    <!-- ============ ABSTRACT / BIO ============ -->
-    <section class="section" id="about">
-      <h2 class="section-label">Abstract</h2>
-      <p>
-        I study how thymic epithelial cells shape T cell development and central immune
-        tolerance — the process by which the body teaches developing T cells to
-        distinguish self from non-self. My work combines single-cell transcriptomics
-        with flow cytometry to characterize human thymic tissue at high resolution, with 
-        the broader goal of understanding how failures in this process contribute to autoimmune 
-        disease.
-      </p>
-      <p>
-        I'm currently a postdoctoral fellow in the
-        <a href="https://meyer-lab-cshl.github.io/" target="_blank" rel="noopener">Meyer Lab</a>
-        at the Simons Center for Quantitative Biology, Cold Spring Harbor Laboratory.
-      </p>
-    </section>
+    <!-- ============ SIDEBAR (identical on every page) ============ -->
+    <aside class="author">
+      <!-- To add a photo: put it in the images/ folder, delete the placeholder div,
+           and uncomment the <img> line below. -->
+      <!-- <img class="avatar" src="images/profile.jpg" alt="Yong Lin"> -->
+      <div class="avatar-placeholder" aria-hidden="true">YL</div>
 
-    <hr class="rule">
-
-    <!-- ============ RESEARCH FOCUS ============ -->
-    <section class="section" id="focus">
-      <h2 class="section-label">Research Focus</h2>
-      <ul class="tag-list">
-        <li class="tag">Autoimmune Disease</li>
-        <li class="tag">Immune Tolerance</li>
-        <li class="tag">T Cell Development</li>
-        <li class="tag">Thymic Epithelial Cells</li>
-        <li class="tag">Flow Cytometry Panel Design</li>
-        <li class="tag">scRNA-seq</li>
-      </ul>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ============ CURRENT WORK ============ -->
-    <section class="section" id="work">
-      <h2 class="section-label">Current Work</h2>
-
-      <article class="work-item">
-        <div class="work-item-head">
-          <h3>Isolation and Characterization of Human Thymic Epithelial Cells</h3>
-          <span class="status-tag">Accepted</span>
-        </div>
-        <p class="work-meta">Journal of Immunology, accepted 9/23/2026, to be published</p>
-        <p>
-          A reproducible protocol for isolating live thymic epithelial cells directly
-          from primary human tissue, combined with single-cell RNA sequencing to
-          resolve epithelial subsets — including a previously uncharacterized
-          population — within the human thymus.
-        </p>
-      </article>
-
-      <article class="work-item">
-        <div class="work-item-head">
-          <h3>seq-to-flow</h3>
-          <span class="status-tag status-tag-active">Ongoing</span>
-        </div>
-        <p class="work-meta">Computational workflow</p>
-        <p>
-          A workflow that translates single-cell RNA-seq data into flow cytometry
-          panel design recommendations — surfacing which markers actually
-          distinguish cell populations, and at what expression thresholds. First
-          applied to human thymic epithelial cell data.
-        </p>
-      </article>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ============ BACKGROUND ============ -->
-    <section class="section" id="background">
-      <h2 class="section-label">Background</h2>
-      <ul class="timeline">
-        <li>
-          <span class="timeline-date">2022 – present</span>
-          <span class="timeline-body">Postdoctoral Fellow, Meyer Lab, Cold Spring Harbor Laboratory</span>
-        </li>
-        <li>
-          <span class="timeline-date">2016 – 2022</span>
-          <span class="timeline-body">PhD, Immunology, Baylor College of Medicine</span>
-        </li>
-        <li>
-          <span class="timeline-date">2011 – 2016</span>
-          <span class="timeline-body">Research Technician, University of Virginia &amp; Roskamp Institute</span>
-        </li>
-        <li>
-          <span class="timeline-date">2008 – 2012</span>
-          <span class="timeline-body">BS, Engineering Science, University of Virginia</span>
-        </li>
-      </ul>
-    </section>
-
-    <hr class="rule">
-
-    <!-- ============ TOOLS ============ -->
-    <section class="section" id="tools">
-      <h2 class="section-label">Tools &amp; Methods</h2>
-      <div class="tool-groups">
-        <div class="tool-group">
-          <h3 class="tool-group-label">Wet Lab</h3>
-          <p>
-              Multiparameter Flow Cytometry (Fortessa, ID7000), FACS Cell Sorting (Sony SH800, SH900, FACSAria), 
-              MACS Cell Enrichment, scRNAseq sample preparation (Parse, 10x Flex), DNA/RNA isolation, PCR, RT-qPCR, 
-              Western Blot, ELISA, Histology (H&E, IHC, ICC), Brightfield Microscopy, Fluorescence Microscopy, 
-              Confocal Microscopy (Zeiss LSM 710, LSM910), Slide Scanner (Zeiss Axioscan, Olympus VS200), 
-              Mouse and Human Tissue Processing, Mammalian Cell Culture, PBMC Isolation, Primary T Cell Isolation, 
-              Primary Monocyte Isolation, Immunoassays, T Cell Stimulation Assays, Monocyte Stimulation Assays, 
-              Cell Lines (Jurkat, THP-1, SH-SY5Y, HEK293), In Vivo Mouse Model of Autoimmune Diabetes, Mouse Handling, 
-              Mouse Injections (IV,IP,SC,ID), mouse surgical techniques (thymus transplant), GraphPad Prism, FlowJo, 
-              ImageJ, QuantStudio
-          </p>
-        </div>
-        <div class="tool-group">
-          <h3 class="tool-group-label">Computational</h3>
-          <p>R / Seurat, UMAP &amp; differential expression analysis, cell type annotation</p>
-        </div>
+      <div>
+        <h2 class="author-name">Yong Lin</h2>
+        <p class="author-bio">Postdoctoral Fellow, Meyer Lab, Cold Spring Harbor Laboratory</p>
       </div>
-    </section>
 
-    <hr class="rule">
-
-    <!-- ============ Links ============ -->
-    <section class="section" id="contact">
-      <h2 class="section-label">Links</h2>
-      <ul class="contact-list">
-        <li><span class="contact-label">Email</span> <a href="mailto:ylin57513@gmail.com">ylin57513@gmail.com</a></li>
-        <li><span class="contact-label">LinkedIn</span> <a href="https://linkedin.com/in/ylin575" target="_blank" rel="noopener">linkedin.com/in/ylin575</a></li>
-        <li><span class="contact-label">GitHub</span> <a href="https://github.com/ylin575" target="_blank" rel="noopener">github.com/ylin575</a></li>
-        <li><span class="contact-label">ORCID</span> <a href="https://orcid.org/0000-0002-2839-5740" target="_blank" rel="noopener">0000-0002-2839-5740</a></li>
-        <li><span class="contact-label">PubMed</span> <a href="https://www.ncbi.nlm.nih.gov/myncbi/1ZalsBozFZEA1/bibliography/public/" target="_blank" rel="noopener">Bibliography</a></li>
-        <li><span class="contact-label">Google Scholar</span> <a href="https://scholar.google.com/citations?user=YoURXtcAAAAJ&hl=en" target="_blank" rel="noopener">Bibliography</a></li>
+      <ul class="author-links">
+        <li><span class="label">Location</span><span class="value">Cold Spring Harbor, NY</span></li>
+        <!-- CHECK: confirm which email you want public -->
+        <li><span class="label">Email</span><a class="value" href="mailto:ylin@cshl.edu">ylin@cshl.edu</a></li>
+        <li><span class="label">ORCID</span><a class="value" href="https://orcid.org/0000-0002-2839-5740" target="_blank" rel="noopener">0000-0002-2839-5740</a></li>
+        <li><span class="label">LinkedIn</span><a class="value" href="https://www.linkedin.com/in/ylin575" target="_blank" rel="noopener">ylin575</a></li>
+        <li><span class="label">GitHub</span><a class="value" href="https://github.com/ylin575" target="_blank" rel="noopener">ylin575</a></li>
       </ul>
-    </section>
+    </aside>
 
-  </main>
+    <!-- ============ PAGE CONTENT (the only part that differs per page) ============ -->
+    <main class="content">
+
+      <h1 class="page-title">About</h1>
+
+      <p>
+        I am an immunologist studying how the thymus teaches developing T cells to
+        tolerate the body's own tissues. My research focuses on thymic epithelial
+        cells, the specialized cells that present self-antigens to developing
+        T cells, and on how failures in this process contribute to autoimmune disease.
+      </p>
+      <p>
+        I am currently a postdoctoral fellow in the
+        <a href="https://www.cshl.edu/" target="_blank" rel="noopener">Meyer Lab</a>
+        at the Simons Center for Quantitative Biology, Cold Spring Harbor Laboratory,
+        where I characterize human thymic epithelial cells using flow cytometry,
+        FACS sorting, single-cell RNA sequencing, and in vitro culture, and help lead
+        a human thymus biobanking effort supporting a large-scale study of T cell development.
+      </p>
+      <p>
+        I completed my PhD in Immunology at Baylor College of Medicine, where I studied
+        hybrid insulin peptides in type 1 diabetes using the NOD mouse model. Before
+        graduate school, I studied engineering at the University of Virginia and
+        worked in biomaterials and neuroscience research labs.
+      </p>
+
+      <h2>Research interests</h2>
+      <ul class="tags">
+        <li>Thymic epithelial cells</li>
+        <li>Central tolerance</li>
+        <li>T cell development</li>
+        <li>Type 1 diabetes &amp; autoimmunity</li>
+        <li>Single-cell transcriptomics</li>
+        <li>Spectral flow cytometry</li>
+      </ul>
+
+      <h2>Selected news</h2>
+      <ul>
+        <li>2023 — Invited speaker, Parse Biosciences, on scRNA-seq sample preparation</li>
+        <li>2022 — Joined the Meyer Lab at Cold Spring Harbor Laboratory</li>
+        <li>2022 — PhD in Immunology, Baylor College of Medicine</li>
+        <li>2021 — AAI Abstract Award and oral presentation</li>
+      </ul>
+    </main>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="inner">© 2026 Yong Lin · Built with plain HTML &amp; CSS, hosted on GitHub Pages</div>
+  </footer>
 
 </body>
 </html>

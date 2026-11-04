@@ -2,345 +2,339 @@
    TOKENS — change values here to re-theme the whole site
    ========================================================================== */
 :root {
-  --bg: #fafaf8;
-  --text: #1a1a1a;
-  --text-muted: #5b5b58;
-  --accent: #2a4b7c;       /* deep academic blue — links, active states */
-  --accent-soft: #4a7c7c;  /* muted teal — used sparingly for tags */
-  --rule: #d8d5cc;         /* hairline dividers */
-  --tag-bg: #f0efe9;
+  --bg: #ffffff;
+  --bg-soft: #f6f7f8;
+  --text: #2f3237;
+  --text-muted: #6a717b;
+  --accent: #2f6fa8;        /* links */
+  --accent-hover: #1d4f7c;
+  --rule: #e3e6e9;
 
-  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
-  --content-width: 680px;
+  --page-width: 1100px;
+  --sidebar-width: 240px;
 }
 
 /* ==========================================================================
-   RESET & BASE
+   BASE
    ========================================================================== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+h1, h2, h3 { line-height: 1.25; color: #1f2226; }
+
+/* ==========================================================================
+   MASTHEAD — top bar with site title + navigation
+   ========================================================================== */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
 }
 
-a:hover,
-a:focus-visible {
+.masthead-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+}
+.site-title:hover { color: var(--text); text-decoration: none; }
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  font-size: 15px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--text); text-decoration: none; }
+
+/* the current page gets an underline — set with class="active" in each file */
+.site-nav a.active {
+  color: var(--text);
   border-bottom-color: var(--accent);
 }
 
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 /* ==========================================================================
-   LAYOUT — everything lives in one centered "article" column
+   LAYOUT — sidebar on the left, content on the right
    ========================================================================== */
-header.masthead,
-main,
-footer.references {
-  max-width: var(--content-width);
+.layout {
+  max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 24px;
-}
-
-.rule {
-  max-width: var(--content-width);
-  margin: 40px auto;
-  border: none;
-  border-top: 1px solid var(--rule);
+  padding: 40px 24px 80px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: 48px;
 }
 
 /* ==========================================================================
-   MASTHEAD
+   SIDEBAR — author profile
    ========================================================================== */
-header.masthead {
-  padding-top: 72px;
-  padding-bottom: 8px;
+.author {
+  position: sticky;          /* stays in view while the content scrolls */
+  top: 24px;
+  align-self: start;
+  font-size: 14px;
 }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* placeholder circle used until a real photo is added */
+.avatar-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.author-name {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.author-bio {
   color: var(--text-muted);
   margin: 0 0 16px;
 }
 
-h1 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 42px;
-  line-height: 1.1;
-  margin: 0 0 12px;
-}
-
-.subtitle {
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-style: italic;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* ==========================================================================
-   SECTIONS
-   ========================================================================== */
-.section {
-  padding: 0 0 8px;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 20px;
-}
-
-.section h3 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.section p {
-  margin: 0 0 16px;
-}
-
-.section p:last-child {
-  margin-bottom: 0;
-}
-
-/* ==========================================================================
-   RESEARCH FOCUS TAGS
-   ========================================================================== */
-.tag-list {
+.author-links {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.author-links li {
+  padding: 5px 0;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.author-links .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.author-links .value { word-break: break-word; }
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+.content { min-width: 0; }   /* lets long words wrap inside the grid column */
+
+.page-title {
+  font-size: 30px;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.content h2 {
+  font-size: 21px;
+  margin: 36px 0 12px;
+}
+
+.content p { margin: 0 0 16px; }
+
+.content ul { padding-left: 20px; }
+.content li { margin-bottom: 6px; }
+
+/* the styled lists below set their own spacing, so cancel the bullet indent */
+.content ul.tags,
+.content ul.cv-list { padding-left: 0; }
+
+/* research-focus tags */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0;
-  padding: 0;
 }
-
-.tag {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  background: var(--tag-bg);
-  color: var(--text);
-  padding: 6px 12px;
+.tags li {
+  margin: 0;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
   border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 13px;
 }
 
 /* ==========================================================================
-   CURRENT WORK
+   PUBLICATIONS / PROJECTS — list of entries
    ========================================================================== */
-.work-item {
-  margin-bottom: 32px;
+.entry {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.entry:last-child { border-bottom: none; }
+
+.entry-title {
+  font-size: 17px;
+  margin: 0 0 4px;
 }
 
-.work-item:last-child {
-  margin-bottom: 0;
+.entry-meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 6px;
 }
 
-.work-item-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 4px;
-}
+.entry-meta .me { font-weight: 600; color: var(--text); }  /* your name in author lists */
 
-.status-tag {
-  flex-shrink: 0;
+.entry p:last-child { margin-bottom: 0; }
+
+.badge {
+  display: inline-block;
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
   border: 1px solid var(--rule);
   border-radius: 3px;
-  padding: 3px 8px;
-}
-
-.status-tag-active {
-  color: var(--accent-soft);
-  border-color: var(--accent-soft);
-}
-
-.work-meta {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-muted);
-  margin: 0 0 10px;
+  padding: 1px 7px;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 /* ==========================================================================
-   BACKGROUND TIMELINE
+   CV — two-column date/description rows
    ========================================================================== */
-.timeline {
+.cv-list {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-.timeline li {
+.cv-list li {
   display: grid;
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: 16px;
-  padding: 10px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.timeline li:first-child {
-  border-top: none;
-}
-
-.timeline-date {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
-   TOOLS
-   ========================================================================== */
-.tool-groups {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.tool-group-label {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0 0 8px;
-}
-
-.tool-group p {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* ==========================================================================
-   CONTACT
-   ========================================================================== */
-.contact-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.contact-list li {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
   padding: 8px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.contact-list li:first-child {
-  border-top: none;
-}
-
-.contact-label {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-muted);
-  width: 70px;
-  flex-shrink: 0;
-}
-
-.placeholder-flag {
-  font-size: 13px;
-  color: var(--accent-soft);
-  font-style: italic;
-}
-
-/* ==========================================================================
-   REFERENCES / FOOTER
-   ========================================================================== */
-footer.references {
-  padding-bottom: 80px;
-}
-
-footer.references ol {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-muted);
-  padding-left: 20px;
   margin: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.cv-list li:last-child { border-bottom: none; }
+
+.cv-date {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
 }
 
-footer.references li {
-  margin-bottom: 6px;
-}
-
-/* ==========================================================================
-   RESPONSIVE — mobile
-   ========================================================================== */
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-
-  header.masthead {
-    padding-top: 48px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  .subtitle {
-    font-size: 17px;
-  }
-
-  .tool-groups {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .timeline li {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .work-item-head {
-    flex-direction: column;
-    gap: 4px;
-  }
+.cv-sub {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
 /* ==========================================================================
-   REDUCED MOTION
+   FOOTER
    ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  a {
-    transition: none;
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.site-footer .inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+/* ==========================================================================
+   RESPONSIVE — on narrow screens the sidebar stacks above the content
+   ========================================================================== */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 28px;
   }
+
+  .author {
+    position: static;
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 0 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .avatar,
+  .avatar-placeholder {
+    width: 96px;
+    height: 96px;
+    font-size: 28px;
+    grid-row: span 2;
+  }
+
+  .author-links { grid-column: 1 / -1; margin-top: 12px; }
+
+  .page-title { font-size: 26px; }
+
+  .cv-list li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+@media (max-width: 420px) {
+  .masthead-inner { padding: 12px 16px; }
+  .layout { padding-left: 16px; padding-right: 16px; }
+  .site-nav ul { gap: 4px 16px; }
 }
